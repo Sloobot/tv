@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:paddingLeft="@dimen/_10sdp"
+    android:paddingTop="@dimen/_10sdp"
+    android:paddingRight="@dimen/_10sdp"
+    tools:context=".fragment.MovieSearchFragment">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:id="@+id/searchBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_search_bar_layout"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:contentDescription="@null"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_magnifier" />
+
+            <EditText
+                android:id="@+id/searchMovie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/_6sdp"
+                android:autofillHints="@null"
+                android:background="@drawable/shape_search_bar"
+                android:hint="Search..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+
+        <!-- Search Information -->
+        <LinearLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_magnifier"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:gravity="center_horizontal"
+                android:text="Find your favorite movie"
+                android:textAlignment="center"
+                android:textSize="@dimen/_16ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/proxima_nova_alt_semibold"
+                android:text="search for movies, anim, trilogy, series...etc"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <com.agrawalsuneet.dotsloader.loaders.TrailingCircularDotsLoader
+            android:id="@+id/progressBarMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:trailingcircular_animDelay="200"
+            app:trailingcircular_animDuration="1200"
+            app:trailingcircular_bigCircleRadius="@dimen/_30sdp"
+            app:trailingcircular_dotsColor="@color/secondary_dark"
+            app:trailingcircular_dotsRadius="@dimen/_6sdp"
+            app:trailingcircular_noOfTrailingDots="5" />
+
+        <!-- Empty Search -->
+        <LinearLayout
+            android:id="@+id/noDataFound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="@dimen/_45sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_magnifier"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_alt_semibold"
+                android:text="Nothing found relevant to your search"
+                android:textSize="@dimen/_14ssp" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMoviesList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/resultsLayout"
+            android:layout_below="@id/searchBarLayout"
+            android:layout_marginTop="@dimen/_6sdp" />
+
+        <!-- Loading More Record -->
+        <RelativeLayout
+            android:id="@+id/resultsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <com.agrawalsuneet.dotsloader.loaders.TashieLoader
+                android:id="@+id/loadingData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:tashieloader_animDelay="200"
+                app:tashieloader_animDur="1000"
+                app:tashieloader_dotsColor="@color/secondary_dark"
+                app:tashieloader_dotsDist="@dimen/dotDist"
+                app:tashieloader_dotsRadius="@dimen/dotsRadius"
+                app:tashieloader_interpolator="@android:anim/accelerate_interpolator"
+                app:tashieloader_noOfDots="4" />
+
+            <TextView
+                android:id="@+id/noMoreRecord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_alt_semibold"
+                android:text="That's all we have for now"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

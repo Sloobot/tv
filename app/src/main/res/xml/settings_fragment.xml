@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogTitle="Select Default Player"
+        android:entries="@array/supported_players"
+        android:entryValues="@array/supported_players_value"
+        android:key="default_player"
+        android:summary="Click to set the default player for TV Channels"
+        android:title="Default Player"
+        app:iconSpaceReserved="false" />
+
+    <Preference
+        android:key="reset_gdrp_consent"
+        android:summary="Tap to reset GDRP consent"
+        android:title="Revoke Consent"
+        app:iconSpaceReserved="false" />
+
+    <PreferenceCategory
+        android:title="App Information"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:icon="@drawable/ic_privacy_policy"
+            android:key="privacy_policy"
+            android:title="Privacy Policy" />
+
+        <Preference
+            android:icon="@drawable/ic_disclaimer"
+            android:key="disclaimer"
+            android:title="Disclaimer" />
+
+        <Preference
+            android:icon="@drawable/ic_rating"
+            android:key="rate_app"
+            android:title="Rate App" />
+
+        <Preference
+            android:icon="@drawable/ic_share"
+            android:key="share_app"
+            android:title="Share App" />
+
+        <Preference
+            android:icon="@drawable/ic_info"
+            android:key="about"
+            android:title="About" />
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_consent_dialog"
+    android:maxHeight="@dimen/_350sdp"
+    android:paddingLeft="@dimen/_12sdp"
+    android:paddingTop="@dimen/_12sdp"
+    android:paddingRight="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_18sdp">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_logo"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/app_updates_version"
+        android:textSize="@dimen/_14ssp"
+        app:fontFamily="@font/proxima_nova_alt_semibold" />
+
+    <TextView
+        android:id="@+id/whats_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_version"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:text="@string/whats_new"
+        android:textSize="@dimen/_10ssp"
+        app:fontFamily="@font/proxima_nova_alt_semibold" />
+
+    <ScrollView
+        android:id="@+id/consentForm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whats_new">
+
+        <TextView
+            android:id="@+id/app_updates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:textSize="@dimen/_12ssp"
+            tools:text="@string/main_text" />
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDownloadNow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/consentForm"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:background="@drawable/shape_btn_orange"
+        android:text="@string/download_now"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold" />
+</RelativeLayout>

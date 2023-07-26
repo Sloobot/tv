@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1d1d27</color>
+    <color name="primary_dark">#343434</color>
+    <color name="secondary">#FFE0B2</color>
+    <color name="secondary_dark">#FF5722</color>
+    <color name="divider">#bdbdbd</color>
+    <color name="deselect_item">#5A5A5A</color>
+    <color name="orange">#F57C00</color>
+
+    <color name="white">#fdfefd</color>
+
+    <color name="background">#1d1d27</color>
+    <color name="text_color">#fdfefd</color>
+    <color name="dull_text">#f5f5f5</color>
+    <color name="ic_launcher_background">#333230</color>
+
+    <!-- Bubble Navigation Bar -->
+    <color name="home">#e53935</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_inactive">#373737</color>
+    <!-- dots active colors -->
+    <color name="dot_active">#97A0A6</color>
+
+    <!--Drawable XML colors-->
+    <color name="black">#000000</color>
+    <color name="btnOrange">#FF5722</color>
+    <color name="movieCategoryBG">#DD2C00</color>
+</resources>

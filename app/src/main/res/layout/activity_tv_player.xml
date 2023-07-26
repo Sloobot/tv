@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TvPlayerActivity">
+
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/tvPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:controller_layout_id="@layout/tv_player_controls_layout"
+        app:played_color="@color/background"
+        app:resize_mode="fill"
+        app:unplayed_color="@color/background" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/_18sdp"
+        android:fontFamily="@font/proxima_nova_alt_semibold"
+        android:text="@string/txt_msg_play_error"
+        android:textSize="@dimen/_14ssp"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/btnClose"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_12sdp"
+        android:contentDescription="@null"
+        android:padding="@dimen/_5sdp"
+        android:src="@drawable/ic_close" />
+
+    <com.agrawalsuneet.dotsloader.loaders.TrailingCircularDotsLoader
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:trailingcircular_animDelay="200"
+        app:trailingcircular_animDuration="1200"
+        app:trailingcircular_bigCircleRadius="@dimen/_30sdp"
+        app:trailingcircular_dotsColor="@color/secondary_dark"
+        app:trailingcircular_dotsRadius="@dimen/_6sdp"
+        app:trailingcircular_noOfTrailingDots="5" />
+</RelativeLayout>

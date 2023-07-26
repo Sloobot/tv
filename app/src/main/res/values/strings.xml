@@ -1,0 +1,83 @@
+<resources>
+    <string name="app_name">Exion TV</string>
+    <string name="admob_pub_id">pub-0123456789012345</string>
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="app_privacy_policy">https://www.google.com</string>
+
+    <!-- Nav Menu -->
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="favourite">Favourite</string>
+
+    <!--Home-->
+    <string name="tv_channels">TV Channels</string>
+    <string name="view_all">View All</string>
+    <string name="upcoming_movies">Upcoming Movies</string>
+    <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="popular_movies">Popular Movies</string>
+
+    <!-- Movie Details -->
+    <string name="casting">Casting</string>
+    <string name="casting_empty_data_msg">No Caster details found for this movie!</string>
+    <string name="trailer">Trailer</string>
+    <string name="trailer_empty_data_msg">No Trailers found for this movie!</string>
+    <string name="related_movies">Movies You May Like</string>
+    <string name="related_movies_empty_data_msg">No relevant data found!</string>
+    <string name="votes">%d votes</string>
+    <string name="add_to_favorite">Add to Favorites</string>
+    <string name="remove_from_favorite">Remove from Favorites</string>
+
+    <!-- TV Player -->
+    <string name="txt_msg_play_error">
+        Currently we are having trouble while playing this channel
+        \n \t &#8226; Check your mobile internet connection
+        \n \t &#8226; Try to load this channel on other external player\'s if any.
+                \n\t\t\te.g VLC, MX Player…
+        \n\t  &#8226; May be this channel is not working, check it again later
+    </string>
+
+    <!-- Custom Consent -->
+    <string name="consent_info_1">We care about your privacy and data security.</string>
+    <string name="main_text">
+        We use ads in this app. This service (including its partners) collects unique identifiers and other personal data. You can change your choice at any time in the app settings. &lt;a href=\"\"&gt;Learn more about this service and your personal data&lt;/a&gt;.
+    </string>
+    <string name="consent_info_2">Can we continue to use your data for these purposes as well as for showing personalized ads?</string>
+    <string name="consent_info_3">
+        By agreeing, you are confirming that you are over the age of 16 and would like a personalized ad experience.
+    </string>
+    <string name="note_text">
+        By agreeing, you are confirming that you are over the age of 16 and would like a personalized ad experience.
+    </string>
+    <string name="footer_text">I understand that I will see ads, but they may not be as relevant to my interests</string>
+    <string name="third_party_services">
+        We use the following third party services in this app:
+        &lt;br /&gt;
+        &lt;br /&gt;
+        &#8226; &lt;a href=\"admob\"&gt;AdMob&lt;/a&gt; (&lt;a href=\"partners\"&gt;Show partners&lt;/a&gt;)
+        &lt;br /&gt;
+        &lt;br /&gt;
+        Click on a service to check out its privacy policy or click the following to check out &lt;a href=\"app_privacy\"&gt;our app\'s privacy policy&lt;/a&gt;
+    </string>
+
+    <!-- App Update Dialog -->
+    <string name="app_updates">App Updates</string>
+    <string name="app_updates_version">version %s is available</string>
+    <string name="whats_new">* Whats new</string>
+    <string name="download_now">Download Now</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer">%s only contains 3rd party links Which are freely available on the World Wide Web. We are not affiliated in any way with the broadcasting channels nor responsible for their content.
+        \nMoreover, we cannot guarantee a stable service provider in your area for better reliable service.
+    </string>
+
+    <!-- Preference Activity-->
+    <string-array name="supported_players">
+        <item>Build-in Player</item>
+        <item>External Player</item>
+    </string-array>
+    <string-array name="supported_players_value">
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

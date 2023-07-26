@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MovieDetailActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/ad_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="750dp"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <ImageView
+                    android:id="@+id/movieBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_190sdp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@color/background" />
+
+                <ProgressBar
+                    android:id="@+id/bannerImageProgressBar"
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignTop="@id/movieBanner"
+                    android:layout_alignBottom="@id/movieBanner"
+                    android:layout_centerInParent="true" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_poster"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_145sdp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_150sdp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="@dimen/_8sdp"
+                    app:cardElevation="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/moviePoster"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="@dimen/_145sdp"
+                            android:contentDescription="@null"
+                            android:scaleType="fitXY"
+                            android:src="@color/background" />
+
+                        <ProgressBar
+                            android:id="@+id/imageProgressBar"
+                            style="@style/Widget.AppCompat.ProgressBar"
+                            android:layout_width="@dimen/_30sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_centerInParent="true" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/movieName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/movieBanner"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/card_poster"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/_14ssp"
+                    app:fontFamily="@font/proxima_nova_alt_bold"
+                    tools:text="Movie Title" />
+
+                <LinearLayout
+                    android:id="@+id/movieCategoryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/movieRating"
+                    android:layout_below="@id/movieName"
+                    android:layout_alignStart="@id/movieName"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:orientation="horizontal" />
+
+                <TextView
+                    android:id="@+id/movieRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/movieName"
+                    android:layout_alignBottom="@id/card_poster"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:fontFamily="@font/proxima_nova_alt_semibold"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/_12sdp"
+                    app:drawableStartCompat="@drawable/ic_star"
+                    tools:text="0.0" />
+            </RelativeLayout>
+
+            <com.agrawalsuneet.dotsloader.loaders.TrailingCircularDotsLoader
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:visibility="gone"
+                app:trailingcircular_animDelay="200"
+                app:trailingcircular_animDuration="1200"
+                app:trailingcircular_bigCircleRadius="@dimen/_30sdp"
+                app:trailingcircular_dotsColor="@color/secondary_dark"
+                app:trailingcircular_dotsRadius="@dimen/_6sdp"
+                app:trailingcircular_noOfTrailingDots="5" />
+
+            <!-- Details Layout -->
+            <LinearLayout
+                android:id="@+id/movieDetailsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/movieReleaseDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_12ssp"
+                        app:drawableTopCompat="@drawable/ic_date"
+                        tools:text="Released Date" />
+
+                    <TextView
+                        android:id="@+id/movieLanguage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_12ssp"
+                        app:drawableTopCompat="@drawable/ic_language"
+                        tools:text="Language" />
+
+                    <TextView
+                        android:id="@+id/movieVoteCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/_3sdp"
+                        android:gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textSize="@dimen/_12ssp"
+                        app:drawableTopCompat="@drawable/ic_vote"
+                        tools:text="Vote" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/movieDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:textSize="@dimen/_13sdp"
+                    tools:text="Lorem ipsum sito diago..." />
+
+                <!-- Casting -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_alt_bold"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:text="@string/casting"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/msgNoCastersFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/proxima_nova_alt_bold"
+                    android:text="@string/casting_empty_data_msg"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMovieCasts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!-- Trailers -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_alt_bold"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:text="@string/trailer"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/msgNoTrailersFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:fontFamily="@font/proxima_nova_alt_bold"
+                    android:text="@string/trailer_empty_data_msg"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvMovieTrailers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <!-- Related Movies -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_alt_bold"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:text="@string/related_movies"
+                    android:textSize="@dimen/_14ssp" />
+
+                <com.agrawalsuneet.dotsloader.loaders.TashieLoader
+                    android:id="@+id/progressBar3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:tashieloader_animDelay="200"
+                    app:tashieloader_animDur="1000"
+                    app:tashieloader_dotsColor="@color/secondary_dark"
+                    app:tashieloader_dotsDist="@dimen/dotDist"
+                    app:tashieloader_dotsRadius="@dimen/dotsRadius"
+                    app:tashieloader_interpolator="@android:anim/accelerate_interpolator"
+                    app:tashieloader_noOfDots="4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvRelatedMovies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:paddingRight="@dimen/_12sdp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="5" />
+
+                <TextView
+                    android:id="@+id/errorMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/proxima_nova_alt_semibold"
+                    android:text="@string/related_movies_empty_data_msg"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

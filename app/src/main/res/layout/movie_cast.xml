@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/casterImage"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_65sdp"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="@dimen/_1sdp" />
+
+    <TextView
+        android:id="@+id/casterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/casterImage"
+        android:layout_alignStart="@id/casterImage"
+        android:layout_alignEnd="@id/casterImage"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:fontFamily="@font/proxima_nova_alt_semibold"
+        android:textAlignment="center"
+        android:textSize="@dimen/_10sdp"
+        tools:text="Caster Name" />
+
+    <TextView
+        android:id="@+id/movieCharacterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/casterName"
+        android:layout_alignStart="@id/casterName"
+        android:layout_alignEnd="@id/casterName"
+        android:text="Character Name"
+        android:textAlignment="center"
+        android:textSize="@dimen/_10sdp" />
+</RelativeLayout>

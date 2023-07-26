@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/trailerThumbnail"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:contentDescription="@null"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:id="@+id/btnPlayTrailer"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_centerInParent="true"
+                android:alpha="0.8"
+                android:contentDescription="@null"
+                android:src="@mipmap/ic_play" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/trailer"
+            android:layout_alignStart="@id/trailer"
+            android:layout_alignEnd="@id/trailer"
+            android:background="@drawable/shape_movie_name_bg"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_3sdp"
+            android:paddingRight="@dimen/_3sdp">
+
+            <TextView
+                android:id="@+id/trailerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:fontFamily="@font/proxima_nova_alt_bold"
+                android:maxLines="1"
+                android:textSize="@dimen/_10ssp"
+                tools:text="Trailer Name" />
+
+            <TextView
+                android:id="@+id/trailerSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_10ssp"
+                tools:text="Youtube" />
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
